@@ -1,6 +1,8 @@
 module FeedlyApi
   module API
-
+def my_art
+puts "It came here"
+end 
     def get_user_profile
       make_request('profile')
     end
@@ -32,5 +34,13 @@ module FeedlyApi
     def get_markers
       make_request('markers/counts')
     end
-  end
+
+  def get_search_results(args={})
+make_request("search/feeds",args)
+end
+end
+
+
+
+
 end
