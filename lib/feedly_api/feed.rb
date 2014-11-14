@@ -22,11 +22,14 @@ module FeedlyApi
 
     def fetch_feed_info
       data = @client.get_feed_info(@id)
+puts "the data in the fetch_feed_info method is #{data.to_s}"
 
       @website     = data.fetch(:website)     { nil }
+
       @subscribers = data.fetch(:subscribers) { nil }
       @title       = data.fetch(:title)       { nil }
       @velocity    = data.fetch(:velocity)    { nil }
     end
+    
   end
 end
